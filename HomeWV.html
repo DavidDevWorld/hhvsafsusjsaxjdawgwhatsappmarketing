@@ -2,150 +2,340 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Follow & Join App</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WhatsApp Marketing Mastery</title>
     <!-- Font Awesome for icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap">
     <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #fff;
-            color: #333;
+        :root {
+            --primary-color: #128C7E;
+            --secondary-color: #075E54;
+            --accent-color: #25D366;
+            --text-color: #333333;
+            --light-bg: #f8f9fa;
+            --white: #ffffff;
+            --border-radius: 10px;
+            --box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            --transition: all 0.3s ease;
+        }
+
+        * {
             margin: 0;
             padding: 0;
-          
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Montserrat', Arial, sans-serif;
+            background-color: var(--light-bg);
+            color: var(--text-color);
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+        }
+
+        .header {
+            background-color: var(--primary-color);
+            color: var(--white);
+            padding: 15px 0;
+            text-align: center;
+            box-shadow: var(--box-shadow);
         }
 
         .container {
-            width: 90%;
-            max-width: 600px;
-            max-height:100%;
-            margin: 20px auto;
-            text-align: center;
+            width: 100%;
+            max-width: 800px;
+            margin: 0 auto;
             padding: 20px;
-            background: #fff;
-            <!-- box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); -->
-            border-radius: 0px;
+            background: var(--white);
+            border-radius: var(--border-radius);
+            box-shadow: var(--box-shadow);
         }
 
-        .online-image {
+        .course-image {
+            width: 100%;
             max-width: 100%;
-           
-            height: 20ppx;
-            border-radius: 5px;
+            height: auto;
+            border-radius: var(--border-radius);
             margin-bottom: 20px;
             box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            display: block;
         }
 
-        h1 {
-            font-size: 2em;
-            margin-bottom: 10px;
+        .course-title {
+            font-size: 1.8rem;
+            font-weight: 700;
+            margin-bottom: 15px;
+            color: var(--secondary-color);
+            text-align: center;
         }
 
-        p {
-            margin: 10px 0;
+        @media (max-width: 768px) {
+            .course-title {
+                font-size: 1.5rem;
+            }
         }
 
-        .btn {
-            display: inline-flex;
-            align-items: left;
-            justify-content: left;
+        .course-description {
+            font-size: 1rem;
+            margin-bottom: 25px;
+            text-align: left;
+            color: #555;
+            line-height: 1.6;
+        }
+
+        .lesson-button {
+            display: flex;
+            align-items: center;
             width: 100%;
             padding: 15px;
-            margin: 10px 0;
-            font-size: 1.2em;
-            color: #fff;
+            margin: 12px 0;
+            font-size: 1rem;
+            font-weight: 500;
+            color: var(--white);
+            background: var(--primary-color);
             border: none;
-            border-radius: 5px;
+            border-radius: var(--border-radius);
             cursor: pointer;
             text-decoration: none;
-            transition: background-color 0.3s ease;
-            gap: 10px;
+            transition: var(--transition);
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            position: relative;
+            overflow: hidden;
+            text-align: left;
         }
 
-        .btn:hover {
-            opacity: 0.9;
+        .lesson-button:hover {
+            background: var(--secondary-color);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
         }
 
-        .youtube-btn {
-            background: #013d2a;
+        .lesson-button i {
+            margin-right: 12px;
+            font-size: 1.2rem;
         }
 
-        .telegram-btn {
-            background: #013d2b;
+        .lesson-button span {
+            flex: 1;
         }
 
-        .facebook-btn {
-            background: #013d2b;
+        /* Alternate colors for buttons */
+        .lesson-button:nth-child(odd) {
+            background: var(--primary-color);
         }
 
-        .whatsapp-btn {
-            background: #013d2b;
+        .lesson-button:nth-child(even) {
+            background: var(--secondary-color);
         }
 
-        .whatsapp-btn:hover {
-            background: #1EBE56;
+        .footer {
+            text-align: center;
+            margin-top: 30px;
+            padding: 15px 0;
+            color: var(--secondary-color);
+            font-weight: 600;
+        }
+
+        .enroll-button {
+            display: block;
+            width: 80%;
+            max-width: 300px;
+            margin: 30px auto;
+            padding: 15px 25px;
+            background-color: var(--accent-color);
+            color: var(--white);
+            text-align: center;
+            font-weight: 600;
+            font-size: 1.1rem;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            text-decoration: none;
+            transition: var(--transition);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+        }
+
+        .enroll-button:hover {
+            background-color: #22c55e;
+            transform: scale(1.05);
+        }
+
+        /* Progress bar styling */
+        .progress-container {
+            width: 100%;
+            background-color: #e0e0e0;
+            border-radius: 20px;
+            margin: 30px 0;
+            height: 10px;
+            overflow: hidden;
+        }
+
+        .progress-bar {
+            height: 100%;
+            background-color: var(--accent-color);
+            width: 0;
+            transition: width 1s ease;
+            border-radius: 20px;
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 576px) {
+            .container {
+                width: 95%;
+                padding: 15px;
+            }
+            
+            .lesson-button {
+                padding: 12px;
+                font-size: 0.9rem;
+            }
+            
+            .course-description {
+                font-size: 0.9rem;
+            }
         }
     </style>
 </head>
 <body>
+    <div class="header">
+        <h2>WhatsApp Marketing Mastery</h2>
+    </div>
+    
     <div class="container">
+        <!-- Course Image -->
+        <img src="https://ikskiils.com.ng/wp-content/uploads/2025/03/20250305_063649-1024x600.jpg" alt="WhatsApp Marketing Mastery" class="course-image">
         
-        <!-- Online Image Section -->
-        <img src="https://ikskiils.com.ng/wp-content/uploads/2025/03/20250305_063649-1024x600.jpg" alt="Online Content" class="online-image">
+        <h1 class="course-title">WhatsApp Marketing Mastery: A Step-by-Step Guide</h1>
         
+        <p class="course-description">This comprehensive course teaches you everything about WhatsApp Marketing using just your smartphone. Learn how to set up your WhatsApp Business account, grow your audience, create engaging content, automate responses, generate leads, and monetize your efforts. Perfect for beginners and advanced marketers alike!</p>
         
-        <p><h1>WhatsApp Marketing Mastery: A Step-by-Step Guide to Setup, Growth, and Monetization</h1></p>
-        <p><h4>This course is designed to teach you everything about WhatsApp Marketing using just your smartphone. You will learn how to set up and optimize your WhatsApp Business account, grow your audience, create engaging content, automate responses, generate leads, and monetize your efforts. Whether you’re a beginner or an advanced marketer, this step-by-step guide will help you succeed in WhatsApp Marketing.</h4></p>
-        
-  
+        <div class="progress-container">
+            <div class="progress-bar" id="progressBar"></div>
+        </div>
 
-        <button class="btn youtube-btn" onclick="openLink('https://daviddevworld.github.io/hhvsafsusjsaxjdawgwhatsappmarketing/WV1.html')">
-            <i class="fab fa-youtube"></i>WHATSAPP MARKETING INTRO
+        <button class="lesson-button" onclick="openLink('https://daviddevworld.github.io/hhvsafsusjsaxjdawgwhatsappmarketing/WV1.html')">
+            <i class="fab fa-whatsapp"></i>
+            <span>Lesson 1: WhatsApp Marketing Introduction</span>
         </button>
-        <button class="btn youtube-btn" onclick="openLink('https://daviddevworld.github.io/hhvsafsusjsaxjdawgwhatsappmarketing/WV2.html')">
-            <i class="fab fa-youtube"></i>Intro and how to create a catalog on WhatsApp Business
+        
+        <button class="lesson-button" onclick="openLink('https://daviddevworld.github.io/hhvsafsusjsaxjdawgwhatsappmarketing/WV2.html')">
+            <i class="fas fa-store"></i>
+            <span>Lesson 2: Creating a Product Catalog on WhatsApp Business</span>
         </button>
-        <button class="btn telegram-btn" onclick="openLink('https://daviddevworld.github.io/hhvsafsusjsaxjdawgwhatsappmarketing/WV3.html">
-            <i class="fab fa-youtube"></i>How to run WhatsApp ads on Whatsapp Business
+        
+        <button class="lesson-button" onclick="openLink('https://daviddevworld.github.io/hhvsafsusjsaxjdawgwhatsappmarketing/WV3.html')">
+            <i class="fas fa-ad"></i>
+            <span>Lesson 3: Running WhatsApp Ads on WhatsApp Business</span>
         </button>
-        <button class="btn telegram-btn" onclick="openLink('https://daviddevworld.github.io/hhvsafsusjsaxjdawgwhatsappmarketing/WV4.html)">
-            <i class="fab fa-youtube"></i>How to use AutoResponder for WA Premium Version 
+        
+        <button class="lesson-button" onclick="openLink('https://daviddevworld.github.io/hhvsafsusjsaxjdawgwhatsappmarketing/WV4.html')">
+            <i class="fas fa-robot"></i>
+            <span>Lesson 4: Using AutoResponder for WA Premium Version</span>
         </button>
-        <button class="btn facebook-btn" onclick="openLink('https://daviddevworld.github.io/hhvsafsusjsaxjdawgwhatsappmarketing/WV5.html')">
-            <i class="fab fa-youtube"></i>BONUS: How to get information from customers, SurveyHeart
+        
+        <button class="lesson-button" onclick="openLink('https://daviddevworld.github.io/hhvsafsusjsaxjdawgwhatsappmarketing/WV5.html')">
+            <i class="fas fa-clipboard-list"></i>
+            <span>BONUS: Getting Customer Information with SurveyHeart</span>
         </button>
-        <button class="btn whatsapp-btn" onclick="openLink('https://daviddevworld.github.io/hhvsafsusjsaxjdawgwhatsappmarketing/WV6.html')">
-            <i class="fab fa-youtube"></i>BONUS: FACEBOOK Lead Generation Ads
+        
+        <button class="lesson-button" onclick="openLink('https://daviddevworld.github.io/hhvsafsusjsaxjdawgwhatsappmarketing/WV6.html')">
+            <i class="fab fa-facebook"></i>
+            <span>BONUS: Facebook Lead Generation Ads</span>
         </button>
-        <button class="btn whatsapp-btn" onclick="openLink('https://daviddevworld.github.io/hhvsafsusjsaxjdawgwhatsappmarketing/WV7.html')">
-            <i class="fab fa-youtube"></i>Autosave Contacts
+        
+        <button class="lesson-button" onclick="openLink('https://daviddevworld.github.io/hhvsafsusjsaxjdawgwhatsappmarketing/WV7.html')">
+            <i class="fas fa-address-book"></i>
+            <span>Lesson 7: Autosave Contacts</span>
         </button>
-        <button class="btn whatsapp-btn" onclick="openLink('https://daviddevworld.github.io/hhvsafsusjsaxjdawgwhatsappmarketing/WV8.html')">
-            <i class="fab fa-youtube"></i>PHONE CHROME BROWSER - Running Ads On Facebook Ads Manger.
+        
+        <button class="lesson-button" onclick="openLink('https://daviddevworld.github.io/hhvsafsusjsaxjdawgwhatsappmarketing/WV8.html')">
+            <i class="fas fa-mobile-alt"></i>
+            <span>Lesson 8: Running Ads on Facebook Ads Manager (Mobile)</span>
         </button>
-        <button class="btn whatsapp-btn" onclick="openLink('https://daviddevworld.github.io/hhvsafsusjsaxjdawgwhatsappmarketing/WV9.html')">
-            <i class="fab fa-youtube"></i>For Laptop - Conversion Ads To WhatsApp
+        
+        <button class="lesson-button" onclick="openLink('https://daviddevworld.github.io/hhvsafsusjsaxjdawgwhatsappmarketing/WV9.html')">
+            <i class="fas fa-laptop"></i>
+            <span>Lesson 9: Conversion Ads to WhatsApp (Desktop)</span>
         </button>
-        <button class="btn whatsapp-btn" onclick="openLink('https://daviddevworld.github.io/hhvsafsusjsaxjdawgwhatsappmarketing/WV10.html')">
-            <i class="fab fa-youtube"></i>Canva On Phone
+        
+        <button class="lesson-button" onclick="openLink('https://daviddevworld.github.io/hhvsafsusjsaxjdawgwhatsappmarketing/WV10.html')">
+            <i class="fas fa-palette"></i>
+            <span>Lesson 10: Using Canva on Your Phone</span>
         </button>
-        <button class="btn whatsapp-btn" onclick="openLink('https://daviddevworld.github.io/hhvsafsusjsaxjdawgwhatsappmarketing/WV11.html')">
-            <i class="fab fa-youtube"></i>Marketing Video
+        
+        <button class="lesson-button" onclick="openLink('https://daviddevworld.github.io/hhvsafsusjsaxjdawgwhatsappmarketing/WV11.html')">
+            <i class="fas fa-video"></i>
+            <span>Lesson 11: Marketing Video Strategies</span>
         </button>
-        <button class="btn whatsapp-btn" onclick="openLink('https://daviddevworld.github.io/hhvsafsusjsaxjdawgwhatsappmarketing/WV12.html')">
-            <i class="fab fa-youtube"></i>Marketing Video 2
+        
+        <button class="lesson-button" onclick="openLink('https://daviddevworld.github.io/hhvsafsusjsaxjdawgwhatsappmarketing/WV12.html')">
+            <i class="fas fa-film"></i>
+            <span>Lesson 12: Advanced Marketing Video Techniques</span>
+        </button>
+        <button class="lesson-button" onclick="openLink('')">
+            <i class="fas fa-question"></i>
+            <span>Quiz and Certificate </span>
         </button>
 
-        <h2>Thank You</h2>
+        <button class="enroll-button" id="enrollButton">
+            Start Learning Now
+        </button>
+
+        <div class="footer">
+            <p>Thank You for Joining Our Course!</p>
+        </div>
     </div>
 
     <script>
+        // Function to open links
         function openLink(url) {
             window.open(url, '_blank');
         }
+        
+        // Animate progress bar when page loads
+        window.onload = function() {
+            setTimeout(function() {
+                document.getElementById('progressBar').style.width = '100%';
+            }, 500);
+        }
+        
+        // Track which lessons have been viewed
+        let lessonsViewed = 0;
+        const totalLessons = 12;
+        const lessonButtons = document.querySelectorAll('.lesson-button');
+        
+        lessonButtons.forEach(button => {
+            button.addEventListener('click', function() {
+                // Add a visited class to show user has viewed this lesson
+                this.classList.add('visited');
+                
+                // Update progress (in a real app, you'd use localStorage to persist this)
+                updateProgress();
+            });
+        });
+        
+        function updateProgress() {
+            lessonsViewed++;
+            if (lessonsViewed > totalLessons) lessonsViewed = totalLessons;
+            
+            const progressPercent = (lessonsViewed / totalLessons) * 100;
+            document.getElementById('progressBar').style.width = progressPercent + '%';
+        }
+        
+        // Enroll button effect
+        document.getElementById('enrollButton').addEventListener('click', function() {
+            this.textContent = 'Already Enrolled!';
+            this.style.backgroundColor = '#22c55e';
+            
+            // Scroll to first lesson
+            lessonButtons[0].scrollIntoView({ behavior: 'smooth' });
+        });
     </script>
-    
-</script>
-<script type="text/javascript" src="//www.highperformanceformat.com/9c45d17aa762fd0224f62c43b28bbfa5/invoke.js"></script>
+
+    <!-- Ad script - maintained from original -->
+    <script type="text/javascript" src="//www.highperformanceformat.com/9c45d17aa762fd0224f62c43b28bbfa5/invoke.js"></script>
 </body>
 </html>
